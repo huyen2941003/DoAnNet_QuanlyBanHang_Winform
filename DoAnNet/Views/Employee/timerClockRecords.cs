@@ -275,8 +275,15 @@ namespace DoAnNet.Views.Employee
                         MessageBox.Show("Ngày không hợp lệ.");
                     }
                 }
-                txt_late.Text = dgv_TimeClockRecord.Rows[r].Cells["lateDate"].Value.ToString();
-
+                string late = dgv_TimeClockRecord.Rows[r].Cells["lateDate"].Value.ToString();
+                if(late == "1")
+                {
+                    txt_late.Text = "Đi muộn";
+                }
+                else
+                {
+                    txt_late.Text = "Bình thường";
+                }
                 object nameEmployee = dgv_TimeClockRecord.Rows[r].Cells["IdEmployee"].Value;
                 if (nameEmployee != null)
                 {

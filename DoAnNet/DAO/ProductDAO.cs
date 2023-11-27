@@ -38,6 +38,21 @@ namespace DoAnNet.DAO
             }
             return list;
         }
+        public string GetFirstProductImageByID(string idProduct)
+        {
+            string imageLink = null;
+            string query = "SELECT TOP 1 image FROM ProductDetails WHERE idProduct = '" + idProduct + "'";
+
+            DataTable data = Connection.Instance.ExecuteOuery(query);
+
+            if (data.Rows.Count > 0)
+            {
+                imageLink = data.Rows[0]["image"].ToString();
+            }
+
+            return imageLink;
+        }
+
         public List<Product> getlistProduct_provider(string idProvider)
         {
             List<Product> list = new List<Product>();

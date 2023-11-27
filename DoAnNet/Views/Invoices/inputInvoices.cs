@@ -248,7 +248,7 @@ namespace DoAnNet.Views.Invoices
             }
             else
             {
-                if (InputInvoicesDAO.Instance.setDeleteInputInvoices(idInvoice).Count > 0)
+                if (InputInvoicesDAO.Instance.setDeleteInputInvoices1(idInvoice) > 0 || InputInvoicesDAO.Instance.setDeleteInputInvoices2(idInvoice) > 0)
                 {
                     MessageBox.Show("Bạn không được xóa hóa đơn này");
                 }

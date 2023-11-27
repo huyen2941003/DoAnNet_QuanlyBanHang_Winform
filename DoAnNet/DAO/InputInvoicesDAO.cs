@@ -58,34 +58,27 @@ namespace DoAnNet.DAO
             int result = Connection.Instance.ExecuteNonOuery(query);
             return result > 0;
         }
-        public List<DataRow> setDeleteInputInvoices(string idInvoice)
+        public int setDeleteInputInvoices1(string idInvoice)
         {
-            List<DataRow> result = new List<DataRow>();
-            List<DataTable> tables = new List<DataTable>();
-            try
+            string query = string.Format("SELECT count(*) FROM BillPayments WHERE idInputInvoice = '{0}'", idInvoice);
+            object result = Connection.Instance.ExecuteScalar(query);
+            if (result != null && result != DBNull.Value)
             {
-                string query1 = string.Format("SELECT count(*) FROM InputInvoicesDetails WHERE idInvoice = '{0}'", idInvoice);
-                DataTable table1 = Connection.Instance.ExecuteOuery(query1);
-                tables.Add(table1); 
-                string query2 = string.Format("SELECT count(*) FROM BillPayments WHERE idInputInvoice = '{0}'", idInvoice);
-                DataTable table2 = Connection.Instance.ExecuteOuery(query2);
-                tables.Add(table2);
-                DataTable unionTable = new DataTable();
-                if (tables.Count > 0)
-                {
-                    unionTable = tables[0].Copy();
-                    foreach (DataTable table in tables.Skip(1))
-                    {
-                        unionTable.Merge(table);
-                    }
-                }
-                result = unionTable.AsEnumerable().ToList();
+                int rowCount = Convert.ToInt32(result);
+                return rowCount;
             }
-            catch (Exception ex)
+            return 0;
+        }
+        public int setDeleteInputInvoices2(string idInvoice)
+        {
+            string query = string.Format("SELECT count(*) FROM InputInvoicesDetails WHERE idInvoice = '{0}'", idInvoice);
+            object result = Connection.Instance.ExecuteScalar(query);
+            if (result != null && result != DBNull.Value)
             {
-                Console.WriteLine("Lỗi: " + ex.Message);
+                int rowCount = Convert.ToInt32(result);
+                return rowCount;
             }
-            return result;
+            return 0;
         }
         public bool UpdateStatusOrders2(string id)
         {
@@ -194,6 +187,27 @@ namespace DoAnNet.DAO
                 "where id = (Select id from Product where nameProduct = N'{0}')", idProduct, costPrice, amount);
             int result = Connection.Instance.ExecuteNonOuery(query);
             return result > 0;
+        }
+        public bool UpdatecostPrice2(float costPrice, string id)
+        {
+            string query = string.Format("Update Product set costPrice = {0} where id = '{1}'",costPrice, id);
+            int result = Connection.Instance.ExecuteNonOuery(query);
+            return result > 0;
+        }
+        public float? GetCost(string idProduct)
+        {
+            float costPrice;
+            string query = "SELECT costPrice FROM Product WHERE id = '" + idProduct + "'";
+            DataTable data = Connection.Instance.ExecuteOuery(query);
+            if (data.Rows.Count > 0)
+            {
+                if (float.TryParse(data.Rows[0]["costPrice"].ToString(), out costPrice))
+                {
+                    return costPrice;
+                }
+            }
+
+            return null;
         }
         public bool UpdateAmount(string idInvoice, string idProduct, int amount)
         {

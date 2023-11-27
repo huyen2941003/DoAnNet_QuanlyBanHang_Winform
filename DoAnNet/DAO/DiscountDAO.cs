@@ -95,14 +95,14 @@ namespace DoAnNet.DAO
             int result = Connection.Instance.ExecuteNonOuery(query);
             return result > 0;
         }
-        public List<Product> SetDelete(string id)
+        public List<ProductDiscount> SetDelete(string id)
         {
-            List<Product> list = new List<Product>();
-            string query = string.Format("select * from Product where idDiscount = '{0}' ", id);
+            List<ProductDiscount> list = new List<ProductDiscount>();
+            string query = string.Format("select * from ProductDiscount where idDiscount = '{0}' ", id);
             DataTable data = Connection.Instance.ExecuteOuery(query);
             foreach (DataRow item in data.Rows)
             {
-                Product product = new Product(item);
+                ProductDiscount product = new ProductDiscount(item);
                 list.Add(product);
             }
             return list;

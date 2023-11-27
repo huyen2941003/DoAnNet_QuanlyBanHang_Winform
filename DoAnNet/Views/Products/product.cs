@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -117,6 +118,16 @@ namespace DoAnNet.Views.Products
                 txt_sale.Text = dgv_product.Rows[r].Cells["rate"].Value.ToString();
                 txt_price.Text = dgv_product.Rows[r].Cells["sellingPrice"].Value.ToString();
 
+                string image = ProductDAO.Instance.GetFirstProductImageByID(txt_idproduct.Text);
+
+                if (string.IsNullOrEmpty(image) || !File.Exists(image))
+                {
+                    pic_product.Image = null;
+                }
+                else
+                {
+                    pic_product.Image = Image.FromFile(image);
+                }
                 string idProduct = txt_idproduct.Text;
                 dgv_details.DataSource = ProductDAO.Instance.getlistProductDetails(idProduct);
             }
