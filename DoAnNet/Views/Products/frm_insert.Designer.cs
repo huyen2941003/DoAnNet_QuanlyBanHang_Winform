@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_insert));
             this.btn_reset = new System.Windows.Forms.Button();
             this.cmb_distribute = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -188,6 +189,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(557, 405);
             this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.cmb_distribute);
@@ -203,8 +205,9 @@
             this.Controls.Add(this.btn_insertproduct);
             this.Controls.Add(this.txt_idproduct);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_insert";
-            this.Text = "frm_insert";
+            this.Text = "Trang thêm sản phẩm";
             this.ResumeLayout(false);
             this.PerformLayout();
 

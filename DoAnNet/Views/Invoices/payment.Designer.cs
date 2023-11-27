@@ -198,7 +198,8 @@
             this.dgv_BillPayments.RowTemplate.Height = 24;
             this.dgv_BillPayments.Size = new System.Drawing.Size(638, 425);
             this.dgv_BillPayments.TabIndex = 142;
-            this.dgv_BillPayments.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_BillPayments_CellClick);            // 
+            this.dgv_BillPayments.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_BillPayments_CellClick);
+            // 
             // txt_search
             // 
             this.txt_search.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -230,7 +231,7 @@
             this.Controls.Add(this.txt_search);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "payment";
-            this.Text = "payment";
+            this.Text = "Thanh toán tiền nhà cung cấp";
             this.Load += new System.EventHandler(this.payment_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_InputInvoices)).EndInit();

@@ -18,6 +18,7 @@ namespace DoAnNet.Views.Employee
 
         public timerClockRecords()
         {
+            InitializeControl();
             InitializeComponent();
             LoadCmbEmployee();
             timer1.Start();
@@ -39,7 +40,7 @@ namespace DoAnNet.Views.Employee
             {
                 btn_delete.Enabled = true;
             }
-            else if (UserRole == "NV")
+            else if (UserRole == "NV" || UserRole == "KT")
             {
                 btn_delete.Enabled = false;
             }

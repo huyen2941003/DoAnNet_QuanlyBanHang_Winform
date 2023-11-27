@@ -138,18 +138,7 @@ namespace DoAnNet.DAO
         }
 
         //Shift
-        public List<shiftEmployee> shiftEmployee()
-        {
-            List<shiftEmployee> list = new List<shiftEmployee>();
-            string query = "select * from shiftEmployee";
-            DataTable data = Connection.Instance.ExecuteOuery(query);
-            foreach (DataRow item in data.Rows)
-            {
-                shiftEmployee shiftEmployee = new shiftEmployee(item);
-                list.Add(shiftEmployee);
-            }
-            return list;
-        }
+        
 
     }
 }

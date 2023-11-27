@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_details));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_product = new System.Windows.Forms.DataGridView();
             this.cmb_discount = new System.Windows.Forms.ComboBox();
@@ -140,8 +141,9 @@
             this.Controls.Add(this.cmb_discount);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_details";
-            this.Text = "frm_details";
+            this.Text = "Thêm sản phẩm vào giảm giá";
             this.Load += new System.EventHandler(this.frm_details_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_product)).EndInit();

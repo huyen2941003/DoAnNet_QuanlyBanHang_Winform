@@ -61,7 +61,7 @@ namespace DoAnNet.Views.Login
         private void btn_delete_Click(object sender, EventArgs e)
         {
             string name = txt_user.Text;
-            if (name == "Admin")
+            if (name == "admin" || name == "Admin")
             {
                 MessageBox.Show("Tài khoản này là tài khoản cố định. Bạn không được xóa!", "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);

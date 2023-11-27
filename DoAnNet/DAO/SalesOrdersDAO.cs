@@ -105,7 +105,6 @@ namespace DoAnNet.DAO
         //                   "FROM Discount d LEFT JOIN ProductDiscount pd ON d.id = pd.idDiscount " +
         //                   "WHERE pd.idProduct = p.id AND d.finishDiscount >= GETDATE()) / 100)) " +
         //                   "FROM Product p WHERE p.nameProduct = N'{1}'", idInvoice, idProduct, aMount);
-
         //    int result = Connection.Instance.ExecuteNonOuery(query);
         //    return result > 0;
         //}

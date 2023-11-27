@@ -34,7 +34,8 @@ namespace DoAnNet.Views.Provider
             dgv_debt.Columns["id"].HeaderText = "Mã hóa đơn";
             dgv_debt.Columns["dateInvoice"].HeaderText = "Ngày nhập";
             dgv_debt.Columns["idProvider"].HeaderText = "Nhà cung cấp";
-            dgv_debt.Columns["pay"].HeaderText = "Nợ";
+            dgv_debt.Columns["pay"].HeaderText = "Thanh toán";
+            dgv_debt.Columns["pay"].HeaderText = "Thanh toán";
             dgv_debt.Columns["orderStatus"].HeaderText = "Trạng thái hóa đơn";
         }
 

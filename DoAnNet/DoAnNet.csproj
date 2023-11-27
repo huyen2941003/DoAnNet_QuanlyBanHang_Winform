@@ -58,6 +58,7 @@
     <Compile Include="DAO\ProviderDAO.cs" />
     <Compile Include="DAO\RevenueDAO.cs" />
     <Compile Include="DAO\SalesOrdersDAO.cs" />
+    <Compile Include="DAO\ShiftDAO.cs" />
     <Compile Include="DAO\TimeClockRecordsDAO.cs" />
     <Compile Include="DAO\TimelineDAO.cs" />
     <Compile Include="DTO\Account.cs" />

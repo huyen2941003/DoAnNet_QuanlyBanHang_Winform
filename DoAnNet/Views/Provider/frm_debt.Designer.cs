@@ -145,7 +145,7 @@
             this.Controls.Add(this.cmb_provider);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_debt";
-            this.Text = "frm_debt";
+            this.Text = "Trạng thái còn nợ";
             this.Load += new System.EventHandler(this.frm_debt_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_debt)).EndInit();
